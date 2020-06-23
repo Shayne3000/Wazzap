@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# A pre-commit script that will run through all of the .hook files in the hooks directory.
+
+EXIT_CODE=0
+
+for SCRIPT in scripts/*.hook
+do
+    if [ -f $SCRIPT -a -x $SCRIPT ]; then
+        $SCRIPT || EXIT_CODE=$?
+    fi
+done
+
+if [ $EXIT_CODE != 0 ]; then
+    exit $EXIT_CODE
+fi

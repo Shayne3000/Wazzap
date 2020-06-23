@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Pre-commit hook to enforce Kotlin style guide using ktlint
+#
+
+FILES=$(git diff --name-only --cached --diff-filter=AM '*.kt' '*.kts')
+if [ -z "$FILES" ]; then
+    exit 0
+fi
+
+"$(git config --get ktlint.jar)" --android --relative --format . $FILES
+exit_code=$?
+
+# Automatically stage changes
+git add $FILES
+
+exit $exit_code
