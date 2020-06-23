@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# A pre-commit script that will run through all of the .hook files in the hooks directory.
+# A pre-commit script that will run through all of the .hook files in the scripts directory.
 
 EXIT_CODE=0
 
