@@ -7,7 +7,7 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 allOpen {
     // allows a final class to be testable
-    //annotation('com.senijoshua.notehero.utils.annotations.OpenForTesting')
+    annotation('com.senijoshua.wazzap.utils.annotations.OpenForTesting')
 }
 
 android {
