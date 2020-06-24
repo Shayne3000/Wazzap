@@ -5,9 +5,9 @@
 # required by these hooks.
 #
 
-cd "$(git rev-parse --show-toplevel)/scripts" || return
+cd "$(git rev-parse --show-toplevel)/config/scripts" || return
 
-mkdir ../.git/scripts/
+mkdir ../.git/config/scripts/
 echo "Copying pre-commit to git hooks"
 cp -rp pre-commit ../.git/scripts/pre-commit
 if [ $? -eq 0 ]; then

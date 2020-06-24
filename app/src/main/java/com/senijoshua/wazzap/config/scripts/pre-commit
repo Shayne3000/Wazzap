@@ -4,7 +4,7 @@
 
 EXIT_CODE=0
 
-for SCRIPT in scripts/*.hook
+for SCRIPT in config/scripts/*.hook
 do
     if [ -f $SCRIPT -a -x $SCRIPT ]; then
         $SCRIPT || EXIT_CODE=$?
