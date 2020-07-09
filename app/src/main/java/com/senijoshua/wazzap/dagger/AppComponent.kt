@@ -13,10 +13,10 @@ import dagger.android.AndroidInjectionModule
  * @author Seni Joshua
  */
 @ApplicationScope
-@Component(modules = [AndroidInjectionModule::class])
+@Component(modules = [AndroidInjectionModule::class, AppModule::class])
 interface AppComponent {
 
-    fun injectApp(app: AppConfig)
+    fun initFieldInjection(app: AppConfig)
 
     @Component.Builder
     interface Builder {
@@ -24,7 +24,7 @@ interface AppComponent {
 
         /**
          * Bind this application instance to the AppComponent/Dagger graph
-         * as the one within which the AppComponent would perform DI.
+         * as the app within which the AppComponent would perform DI.
          */
         @BindsInstance
         fun application(application: Application): Builder

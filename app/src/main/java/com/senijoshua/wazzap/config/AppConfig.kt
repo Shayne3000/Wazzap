@@ -3,6 +3,7 @@ package com.senijoshua.wazzap.config
 import android.app.Application
 import android.content.Context
 import com.senijoshua.wazzap.dagger.AppComponent
+import com.senijoshua.wazzap.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -20,9 +21,12 @@ class AppConfig : Application(), HasAndroidInjector {
 
     override fun onCreate() {
         super.onCreate()
+        appInstance = this
+        //Initialise the app component here and bind the application instance to it.
+        appComponent = DaggerAppComponent.builder().application(this).build()
 
-        //Initialise dagger/base app component here and
         //Then initialise field injection in the application class
+        appComponent?.initFieldInjection(this)
     }
 
     /**
