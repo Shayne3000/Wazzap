@@ -22,16 +22,16 @@ class AppConfig : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         appInstance = this
-        //Initialise the app component here and bind the application instance to it.
+        // Initialise the app component here and bind the application instance to it.
         appComponent = DaggerAppComponent.builder().application(this).build()
 
-        //Then initialise field injection in the application class
+        // Then initialise field injection in the application class
         appComponent?.initFieldInjection(this)
     }
 
     /**
      * Returns the injected Android Injector from dagger that will be used
-     * for performing field injection in Android framework classes.
+     * for performing field injection in Android framework classes within this app
      */
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
