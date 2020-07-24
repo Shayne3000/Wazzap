@@ -2,6 +2,7 @@ package com.senijoshua.wazzap.dagger
 
 import android.app.Application
 import com.senijoshua.wazzap.config.AppConfig
+import com.senijoshua.wazzap.dagger.modules.AppModule
 import com.senijoshua.wazzap.utils.annotations.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
