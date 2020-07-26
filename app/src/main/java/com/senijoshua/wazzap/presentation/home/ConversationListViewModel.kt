@@ -12,7 +12,7 @@ import com.senijoshua.wazzap.utils.annotations.OpenForTesting
  * @author Seni Joshua
  */
 @OpenForTesting
-class ConversationListViewModel : ViewModel() {
+class ConversationListViewModel() : ViewModel() {
     private val conversationMutableList: MutableLiveData<String> by lazy {
         MutableLiveData<String>().also {
             loadConversations()

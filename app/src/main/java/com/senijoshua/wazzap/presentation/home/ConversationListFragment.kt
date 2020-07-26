@@ -16,12 +16,12 @@ import javax.inject.Inject
  * @author Seni Joshua
  */
 class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_list) {
-    @Inject private lateinit var viewModel: ConversationListViewModel
+    @Inject lateinit var viewModel: ConversationListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // set the android injection to perform injection of dependencies into the fragment
-        AndroidSupportInjection.inject(this)
+//        AndroidSupportInjection.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

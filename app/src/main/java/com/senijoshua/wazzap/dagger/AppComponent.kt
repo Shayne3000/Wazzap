@@ -7,6 +7,7 @@ import com.senijoshua.wazzap.utils.annotations.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 
 /**
  * Application component responsible for injecting application scope dependencies
@@ -14,7 +15,11 @@ import dagger.android.AndroidInjectionModule
  * @author Seni Joshua
  */
 @ApplicationScope
-@Component(modules = [AndroidInjectionModule::class, AppModule::class])
+@Component(modules = [
+    AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class,
+    AppModule::class
+])
 interface AppComponent {
 
     fun initFieldInjection(app: AppConfig)

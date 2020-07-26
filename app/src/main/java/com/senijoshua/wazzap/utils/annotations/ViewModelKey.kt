@@ -10,6 +10,11 @@ import kotlin.reflect.KClass
  *
  * @author Seni Joshua
  */
+@Target(
+    AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY_GETTER,
+    AnnotationTarget.PROPERTY_SETTER
+)
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 @MapKey
-@Target(AnnotationTarget.FUNCTION)
 annotation class ViewModelKey(val value: KClass<out ViewModel>)

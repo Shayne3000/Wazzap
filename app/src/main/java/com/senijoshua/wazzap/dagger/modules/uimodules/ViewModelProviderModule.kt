@@ -1,4 +1,4 @@
-package com.senijoshua.wazzap.dagger.modules
+package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModelProvider
 import com.senijoshua.wazzap.presentation.home.ConversationListFragment
@@ -7,16 +7,17 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Module that is responsible for creating ViewModels for injection into Fragments
- * using the bound fragment instance and the supplied ViewModelProvider factory.
+ * Module that is responsible for supplying ViewModels
+ * to the generated AndroidInjector for injection into bound Fragments using the fragment
+ * instance and the [WazzapViewModelFactory].
  *
  * @author Seni Joshua
  */
 @Module
-class ViewModelInjectionModule {
+class ViewModelProviderModule {
 
     @Provides
-    fun supplyConversationListViewModel(
+    fun provideConversationListViewModel(
         target: ConversationListFragment,
         factory: ViewModelProvider.Factory
     ): ConversationListViewModel =
