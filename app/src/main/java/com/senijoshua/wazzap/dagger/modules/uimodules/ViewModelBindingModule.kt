@@ -21,8 +21,11 @@ abstract class ViewModelBindingModule {
 
     /**
      * Sets the [ConversationListViewModel] type as the associated key for retrieving
-     * the provider method in the Dagger generated map that supplies a [ConversationListViewModel]
-     * to the fragment's subcomponent for injection into it.
+     * the provider method in the Dagger generated map that supplies the [ConversationListViewModel]
+     * to a fragment's subcomponent for injection into it.
+     *
+     * It's associating the key of type [ConversationListViewModel]
+     * to the [ConversationListViewModel] VM in Dagger's generated map.
      */
     @Binds
     @IntoMap

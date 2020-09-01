@@ -24,7 +24,6 @@ class WazzapViewModelFactory @Inject constructor(
             "Provider for $modelClass returned null"
         }
 
-
     private fun <T : ViewModel> getProvider(viewModelClass: Class<T>): Provider<T> =
         try {
             requireNotNull(providers[viewModelClass] as Provider<T>) {

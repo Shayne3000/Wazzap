@@ -7,8 +7,8 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Module that is responsible for supplying ViewModels
- * to the generated AndroidInjector for injection into bound Fragments using the fragment
+ * Module that is responsible for instantiating and supplying ViewModels
+ * to the parent subcomponent for injection into Fragments using the said fragment
  * instance and the [WazzapViewModelFactory].
  *
  * @author Seni Joshua

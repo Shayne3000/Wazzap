@@ -21,15 +21,10 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // set the android injection to perform injection of dependencies into the fragment
-//        AndroidSupportInjection.inject(this)
+        AndroidSupportInjection.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
     }
 }
