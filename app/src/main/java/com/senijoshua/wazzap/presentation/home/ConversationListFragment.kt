@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.senijoshua.wazzap.R
 import com.senijoshua.wazzap.presentation.root.WazzapFragment
 import dagger.android.support.AndroidSupportInjection
@@ -26,5 +28,6 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        navController.navigate(R.id.conversation_list_to_conversation_details)
     }
 }
