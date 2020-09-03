@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.senijoshua.wazzap.R
 import com.senijoshua.wazzap.utils.annotations.OpenForTesting
 
 /**
@@ -18,7 +16,7 @@ import com.senijoshua.wazzap.utils.annotations.OpenForTesting
 @OpenForTesting
 class WazzapFragment(@LayoutRes layoutId: Int) : Fragment(layoutId) {
     // Every fragment subclass would not need to always re-implement a navController as
-    // it would have been done for them.
+    // it would have been done for them in this parent class.
     lateinit var navController: NavController
 
     override fun onAttach(context: Context) {
