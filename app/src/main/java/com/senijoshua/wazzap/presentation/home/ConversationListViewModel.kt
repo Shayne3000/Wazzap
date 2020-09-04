@@ -20,6 +20,8 @@ class ConversationListViewModel() : ViewModel() {
     }
     val conversationList: LiveData<String> = conversationMutableList
 
+    val toolbarTitle: LiveData<String> = MutableLiveData<String> ("Super")
+
     private fun loadConversations() {
         // TODO Call the repository and ask it to load the
         //  conversation list using the DB as a source of truth
