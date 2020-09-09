@@ -16,10 +16,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
             android:text="@{viewmodel.toolbarTitle}"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
