@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorPrimary">@color/base_darker</color>
+    <color name="colorPrimaryDark">@color/base_darkest</color>
+    <color name="colorAccent">@color/base_dark</color>
+
+    <color name="tab_active">@color/white</color>
+    <color name="tab_inactive">@color/base_light</color>
+    <color name="conversation_background">@color/off_white</color>
+    <color name="toolbar_background">@color/base_darker</color>
+    <color name="outgoing_chat">@color/base_lightest</color>
+    <color name="incoming_chat">@color/white</color>
+    <color name="message_input_button_inactive">@color/gray</color>
+
+    <!--Wazzap base color palette-->
+    <color name="base_lightest">#DCF8C6</color>
+    <color name="base_light">#7eb0ad</color>
+    <color name="base">#16cc3e</color>
+    <color name="base_dark">#128C7E</color>
+    <color name="base_darker">#0e5e55</color>
+    <color name="base_darkest">#00574B</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="off_white">#ECE5DD</color>
+    <color name="gray">#88898b</color>
 </resources>

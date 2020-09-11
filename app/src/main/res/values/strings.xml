@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Wazzap</string>
+
+    <!--Conversation List-->
+    <string name="settings">Settings</string>
+
+    <!--Conversation-->
+    <string name="compose_message">Compose message</string>
+
+    <!--Miscellaneous-->
+    <string name="search">Search</string>
 </resources>
