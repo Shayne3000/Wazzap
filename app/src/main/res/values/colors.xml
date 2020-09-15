@@ -3,7 +3,7 @@
 
     <color name="colorPrimary">@color/base_darker</color>
     <color name="colorPrimaryDark">@color/base_darkest</color>
-    <color name="colorAccent">@color/base_dark</color>
+    <color name="colorAccent">@color/base</color>
 
     <color name="tab_active">@color/white</color>
     <color name="tab_inactive">@color/base_light</color>
