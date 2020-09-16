@@ -9,9 +9,8 @@ import dagger.multibindings.IntoMap
 
 
 /**
- * Module responsible for instantiating and supplying ViewModels gleaned from their provider
- * counterparts in Dagger's generated map for injection into any fragment.
- * The ViewModel keys are bound to their respective [ViewModel]s.
+ * Module responsible for instantiating and supplying [ViewModel] instances
+ * for injection into any fragment.
  *
  * @author Seni Joshua
  */
@@ -20,8 +19,8 @@ class ViewModelProviderModule {
 
     /**
      * Sets the [ConversationListViewModel] type as the associated key for retrieving
-     * the provider method in the Dagger generated map that supplies the [ConversationListViewModel]
-     * instance.
+     * the provider method in the Dagger generated map that is bound to the
+     * [ConversationListViewModel] instance.
      *
      * It's associating the key of type [ConversationListViewModel]
      * to the [ConversationListViewModel] VM in Dagger's generated map.
