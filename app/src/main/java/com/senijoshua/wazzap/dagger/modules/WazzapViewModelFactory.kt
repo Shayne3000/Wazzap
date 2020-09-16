@@ -8,14 +8,13 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 /**
- * Factory that uses a given VMKey to search the generated map of <VMKey, Provider> for
- * a specific provider and uses it to instantiate and supply ViewModel instances.
- * The VMKey is the ViewModel class name.
+ * [ViewModelProvider.Factory] subclass that uses a given VMKey to search the generated
+ * map of <VMKey, Provider> for a specific provider and uses it to instantiate and
+ * supply ViewModel instances. The VMKey is the ViewModel class name.
  *
  * @author Seni Joshua
  */
-@ApplicationScope
-class WazzapViewModelFactory @Inject constructor(
+class WazzapViewModelFactory(
     private val providers: Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
 
@@ -24,6 +23,7 @@ class WazzapViewModelFactory @Inject constructor(
             "Provider for $modelClass returned null"
         }
 
+    @Suppress("UNCHECKED_CAST")
     private fun <T : ViewModel> getProvider(viewModelClass: Class<T>): Provider<T> =
         try {
             requireNotNull(providers[viewModelClass] as Provider<T>) {
