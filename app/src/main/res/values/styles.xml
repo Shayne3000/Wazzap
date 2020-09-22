@@ -24,7 +24,7 @@
         <item name="colorControlHighlight">@color/white</item>
     </style>
 
-    <!-- Splash Theme for displaying a screen to user just-->
+    <!-- Splash Theme for displaying a splash screen to user before the app's UI finishes loading-->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
