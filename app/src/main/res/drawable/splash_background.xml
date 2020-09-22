@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+    <item>
+        <shape>
+            <gradient
+                android:angle="90"
+                android:endColor="@color/colorPrimary"
+                android:centerColor="@color/colorPrimary"
+                android:startColor="@android:color/black"
+                android:type="linear"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/wazzap_logo"
+            android:gravity="center"/>
+    </item>
+</layer-list>
