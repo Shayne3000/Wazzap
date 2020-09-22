@@ -1,4 +1,4 @@
-package com.senijoshua.wazzap.presentation.home
+package com.senijoshua.wazzap.presentation.chatlist
 
 import android.os.Bundle
 import android.view.View
@@ -17,12 +17,13 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // set the android injection to perform injection of dependencies into the fragment
+        // set the android support injector to perform injection of dependencies into the fragment
         AndroidSupportInjection.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController.navigate(R.id.conversation_list_to_conversation_details)
+
+        //navController.navigate(R.id.conversation_list_to_conversation_details)
     }
 }

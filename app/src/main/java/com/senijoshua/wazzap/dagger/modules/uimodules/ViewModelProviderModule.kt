@@ -1,7 +1,7 @@
 package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModel
-import com.senijoshua.wazzap.presentation.home.ConversationListViewModel
+import com.senijoshua.wazzap.presentation.chatlist.ConversationListViewModel
 import com.senijoshua.wazzap.utils.annotations.ViewModelKey
 import dagger.Module
 import dagger.Provides
