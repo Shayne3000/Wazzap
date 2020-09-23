@@ -2,7 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -24,7 +23,7 @@
         <item name="colorControlHighlight">@color/white</item>
     </style>
 
-    <!-- Splash Theme for displaying a splash screen to user before the app's UI finishes loading-->
+    <!-- Theme for displaying a splash screen to user before the app's UI finishes loading-->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
@@ -32,6 +31,6 @@
     <!-- Further Styling for the Toolbar's Title TextView -->
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">21sp</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 </resources>
