@@ -15,7 +15,7 @@
         app:title="@string/app_name"
         app:titleMarginStart="@dimen/density_24"
         app:titleTextAppearance="@style/Toolbar.TitleText"
-        app:titleTextColor="@color/tab_inactive" />
+        app:titleTextColor="@color/app_title_color" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/home_tab_layout"

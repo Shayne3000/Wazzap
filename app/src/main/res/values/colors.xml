@@ -11,6 +11,7 @@
     <color name="toolbar_background">@color/base_darker</color>
     <color name="outgoing_chat">@color/base_lightest</color>
     <color name="incoming_chat">@color/white</color>
+    <color name="app_title_color">@color/white</color>
     <color name="message_input_button_inactive">@color/gray</color>
 
     <!--Wazzap base color palette-->

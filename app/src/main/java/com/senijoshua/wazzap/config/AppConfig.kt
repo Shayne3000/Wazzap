@@ -38,6 +38,6 @@ class AppConfig : Application(), HasAndroidInjector {
     companion object {
         var appInstance: Application? = null
         var appComponent: AppComponent? = null
-        var applicationContext: Context = appInstance!!.applicationContext
+        var applicationContext: Context? = appInstance?.applicationContext
     }
 }

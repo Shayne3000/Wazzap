@@ -22,8 +22,8 @@ class WazzapActivity : AppCompatActivity(R.layout.activity_wazzap), HasAndroidIn
     @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
         AndroidInjection.inject(this)
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
     }
 
