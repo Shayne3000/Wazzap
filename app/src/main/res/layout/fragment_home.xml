@@ -11,10 +11,65 @@
         android:background="@color/colorPrimary"
         android:theme="@style/ToolbarTheme"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextAppearance="@style/Toolbar.TitleText"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
+        app:title="@string/app_name"
+        app:titleMarginStart="@dimen/density_24"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/tab_inactive" />
 
-    <!--Todo add a viewpager-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/home_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        app:tabBackground="@color/colorPrimary"
+        app:tabIconTint="@color/tab_inactive"
+        app:tabIndicatorColor="@color/tab_active"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/tab_active"
+        app:tabTextAppearance="@style/Tab.TitleText"
+        app:tabTextColor="@color/tab_inactive">
 
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_camera_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_camera_alt_24dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_chat_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chat" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_status_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/home_calls_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calls" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/home_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_tab_layout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/density_16"
+        android:layout_marginBottom="@dimen/density_16"
+        app:backgroundTint="@color/base"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_chat_24dp"
+        app:tint="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

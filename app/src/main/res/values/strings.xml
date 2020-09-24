@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Wazzap</string>
+    <string name="app_name">Wazzap!</string>
+
+    <!--Home-->
+    <string name="chat">CHAT</string>
+    <string name="status">STATUS</string>
+    <string name="calls">CALLS</string>
 
     <!--Conversation List-->
     <string name="settings">Settings</string>

@@ -33,4 +33,9 @@
         <item name="android:textSize">21sp</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
+
+    <!-- Styling for the Home tab text-->
+    <style name="Tab.TitleText" parent="Toolbar.TitleText">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>
