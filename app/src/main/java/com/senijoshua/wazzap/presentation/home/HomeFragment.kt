@@ -65,6 +65,7 @@ class HomeViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycl
     override fun getItemCount() = TAB_COUNT
 
     override fun createFragment(position: Int): Fragment {
+        // Todo consider creating a map of titles and using the title index
         return when (position) {
             1 -> ConversationListFragment()
 
