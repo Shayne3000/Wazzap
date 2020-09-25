@@ -1,4 +1,4 @@
-package com.senijoshua.wazzap.presentation.chatlist
+package com.senijoshua.wazzap.presentation.home.chatlist
 
 import android.os.Bundle
 import android.view.View

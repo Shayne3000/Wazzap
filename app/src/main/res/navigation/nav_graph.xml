@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragment_conversation_list"
-        android:name="com.senijoshua.wazzap.presentation.chatlist.ConversationListFragment"
+        android:name="com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment"
         android:label="ConversationList"
         tools:layout="@layout/fragment_conversation_list" />
 

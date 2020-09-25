@@ -1,4 +1,4 @@
-package com.senijoshua.wazzap.presentation.chatlist
+package com.senijoshua.wazzap.presentation.home.chatlist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
