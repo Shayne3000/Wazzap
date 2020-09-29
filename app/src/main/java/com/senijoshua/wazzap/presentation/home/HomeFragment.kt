@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 import com.senijoshua.wazzap.R
 import com.senijoshua.wazzap.presentation.home.calls.CallsFragment
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment
@@ -17,7 +18,11 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
 
-private const val TAB_COUNT = 4
+private const val TAB_COUNT = 3
+private const val CHAT_INDEX = 0
+private const val STATUS_INDEX = 1
+private const val CALLS_INDEX = 2
+private val homeTabTitleResources = listOf(R.string.chats, R.string.status, R.string.calls)
 
 /**
  * Fragment that is the first point of entry into the app and holds all the primary fragments
@@ -26,10 +31,15 @@ private const val TAB_COUNT = 4
  * @author Seni Joshua
  */
 class HomeFragment : WazzapFragment(R.layout.fragment_home) {
-    @Inject lateinit var viewModel: HomeViewModel
+    @Inject
+    lateinit var viewModel: HomeViewModel
 
     val rootActivity: WazzapActivity by lazy {
         activity as WazzapActivity
+    }
+
+    val pagerAdapter: HomeViewPagerAdapter by lazy {
+        HomeViewPagerAdapter(childFragmentManager, lifecycle)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,9 +63,18 @@ class HomeFragment : WazzapFragment(R.layout.fragment_home) {
 
         rootActivity.setSupportActionBar(home_toolbar)
 
-        // TODO Assign the pager adapter to the View Pager
+        home_view_pager.adapter = pagerAdapter
 
-        // TODO Connect the tab layout to the ViewPager using the TabsLayoutMediator
+        TabLayoutMediator(home_tab_layout, home_view_pager) { tab, position ->
+            when (position) {
+                CHAT_INDEX -> tab.text = getString(homeTabTitleResources[CHAT_INDEX])
+                STATUS_INDEX -> tab.text = getString(homeTabTitleResources[STATUS_INDEX])
+                CALLS_INDEX -> tab.text = getString(homeTabTitleResources[CALLS_INDEX])
+            }
+            // when a certain tab is selected, the viewpager would page to that tab
+            home_view_pager.currentItem = tab.position
+        }.attach()
+        home_tab_layout.selectTab(home_tab_layout.getTabAt(CHAT_INDEX))
     }
 }
 
@@ -65,15 +84,14 @@ class HomeViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycl
     override fun getItemCount() = TAB_COUNT
 
     override fun createFragment(position: Int): Fragment {
-        // Todo consider creating a map of titles and using the title index
         return when (position) {
-            1 -> ConversationListFragment()
+            CHAT_INDEX -> ConversationListFragment()
 
-            2 -> StatusFragment()
+            STATUS_INDEX -> StatusFragment()
 
-            3 -> CallsFragment()
+            CALLS_INDEX -> CallsFragment()
 
-            else -> StatusFragment()
+            else -> Fragment()
         }
     }
 }

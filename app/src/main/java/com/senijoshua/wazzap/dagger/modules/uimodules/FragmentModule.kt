@@ -1,6 +1,7 @@
 package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModel
+import com.senijoshua.wazzap.presentation.home.HomeFragment
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel
 import dagger.Module
@@ -25,4 +26,7 @@ abstract class FragmentModule {
      */
     @ContributesAndroidInjector(modules = [ViewModelInjectorModule::class])
     abstract fun bindConversationListFragment(): ConversationListFragment
+
+    @ContributesAndroidInjector(modules = [ViewModelInjectorModule::class])
+    abstract fun bindHomeFragment(): HomeFragment
 }

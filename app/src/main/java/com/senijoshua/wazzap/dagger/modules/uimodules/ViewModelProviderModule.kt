@@ -1,6 +1,7 @@
 package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModel
+import com.senijoshua.wazzap.presentation.home.HomeViewModel
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel
 import com.senijoshua.wazzap.utils.annotations.ViewModelKey
 import dagger.Module
@@ -29,4 +30,9 @@ class ViewModelProviderModule {
     @IntoMap
     @ViewModelKey(ConversationListViewModel::class)
     fun provideConversationListViewModel(): ViewModel = ConversationListViewModel()
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(HomeViewModel::class)
+    fun provideHomeViewModel(): ViewModel = HomeViewModel()
 }

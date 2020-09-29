@@ -17,43 +17,33 @@
         app:titleTextAppearance="@style/Toolbar.TitleText"
         app:titleTextColor="@color/app_title_color" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/home_camera"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:padding="14dp"
+        android:contentDescription="@string/status_camera_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        app:srcCompat="@drawable/ic_camera_alt_24dp"
+        app:tint="@color/tab_inactive" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/home_tab_layout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
+        app:layout_constraintLeft_toRightOf="@id/home_camera"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_toolbar"
         app:tabBackground="@color/colorPrimary"
-        app:tabIconTint="@color/tab_inactive"
         app:tabIndicatorColor="@color/tab_active"
         app:tabMode="fixed"
+        app:tabRippleColor="@color/white_20"
         app:tabSelectedTextColor="@color/tab_active"
         app:tabTextAppearance="@style/Tab.TitleText"
-        app:tabTextColor="@color/tab_inactive">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/home_camera_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/ic_camera_alt_24dp" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/home_chat_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chat" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/home_status_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/status" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/home_calls_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/calls" />
-    </com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="@color/tab_inactive"
+        app:tabUnboundedRipple="false" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/home_view_pager"

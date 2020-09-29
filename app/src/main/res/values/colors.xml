@@ -22,6 +22,9 @@
     <color name="base_darker">#0e5e55</color>
     <color name="base_darkest">#00574B</color>
 
+    <!--Tab ripple color-->
+    <color name="white_20">#33FFFFFF</color>
+
     <color name="white">#FFFFFF</color>
     <color name="off_white">#ECE5DD</color>
     <color name="gray">#88898b</color>

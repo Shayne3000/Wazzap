@@ -2,9 +2,10 @@
     <string name="app_name">Wazzap!</string>
 
     <!--Home-->
-    <string name="chat">CHAT</string>
-    <string name="status">STATUS</string>
-    <string name="calls">CALLS</string>
+    <string name="status_camera_description">camera icon for recording status videos</string>
+    <string name="chats">chats</string>
+    <string name="status">status</string>
+    <string name="calls">calls</string>
 
     <!--Conversation List-->
     <string name="settings">Settings</string>

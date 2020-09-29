@@ -1,6 +1,8 @@
 package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModelProvider
+import com.senijoshua.wazzap.presentation.home.HomeFragment
+import com.senijoshua.wazzap.presentation.home.HomeViewModel
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel
 import dagger.Module
@@ -16,9 +18,14 @@ import dagger.Provides
 class ViewModelInjectorModule {
 
     @Provides
-    fun provideConversationListViewModel(
+    fun initConversationListViewModel(
         target: ConversationListFragment,
         factory: ViewModelProvider.Factory
     ): ConversationListViewModel =
         ViewModelProvider(target, factory).get(ConversationListViewModel::class.java)
+
+    @Provides
+    fun initHomeViewModel(target: HomeFragment, factory: ViewModelProvider.Factory) =
+        ViewModelProvider(target, factory).get(HomeViewModel::class.java)
+
 }
