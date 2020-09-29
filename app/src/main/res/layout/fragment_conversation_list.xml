@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="com.senijoshua.wazzap.presentation.chatlist.ConversationListViewModel" />
+            type="com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
