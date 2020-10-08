@@ -22,8 +22,6 @@ private const val TAB_COUNT = 3
 private const val CHAT_INDEX = 0
 private const val STATUS_INDEX = 1
 private const val CALLS_INDEX = 2
-private val homeTabTitleResources = listOf(R.string.chats, R.string.status, R.string.calls)
-
 /**
  * Fragment that is the first point of entry into the app and holds all the primary fragments
  * in a Viewpager.
@@ -31,13 +29,11 @@ private val homeTabTitleResources = listOf(R.string.chats, R.string.status, R.st
  * @author Seni Joshua
  */
 class HomeFragment : WazzapFragment(R.layout.fragment_home) {
-    @Inject
-    lateinit var viewModel: HomeViewModel
-
+    @Inject lateinit var viewModel: HomeViewModel
+    private val homeTabTitleResources = listOf(R.string.chats, R.string.status, R.string.calls)
     val rootActivity: WazzapActivity by lazy {
         activity as WazzapActivity
     }
-
     val pagerAdapter: HomeViewPagerAdapter by lazy {
         HomeViewPagerAdapter(childFragmentManager, lifecycle)
     }
