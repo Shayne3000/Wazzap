@@ -1,2 +1,4 @@
 rootProject.name='Wazzap'
 include ':app'
+include ':chat'
+project(":chat").projectDir=new File("C:\\Users\\shayn\\Documents\\Wazzap\\chat");

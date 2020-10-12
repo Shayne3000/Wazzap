@@ -1,17 +1,28 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.4.0'
+    ext.kotlin_version = '1.4.10'
+    ext {
+        googleServiceVersion = '4.3.2'
+        mavenGradlePluginVersion = '2.1'
+        jacocoVersion = '0.1.4'
+        mannodermausVersion = '1.5.1.0'
+
+    }
     repositories {
         google()
         jcenter()
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'org.jetbrains.kotlin:kotlin-allopen:1.4.0'
         classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0'
+
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenGradlePluginVersion"
+        classpath "com.google.gms:google-services:$googleServiceVersion"
+        classpath "de.mannodermaus.gradle.plugins:android-junit5:$mannodermausVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -23,6 +34,36 @@ allprojects {
         jcenter()
         maven {
             url "https://jitpack.io"
+        }
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            android {
+                compileSdkVersion 30
+
+                defaultConfig {
+                    minSdkVersion 21
+                    targetSdkVersion 30
+
+                    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                }
+                compileOptions {
+                    sourceCompatibility = 1.8
+                    targetCompatibility = 1.8
+                }
+
+                kotlinOptions {
+                    jvmTarget = "1.8"
+                }
+
+                buildFeatures {
+                    dataBinding = true
+                    viewBinding = false
+                }
+            }
         }
     }
 }

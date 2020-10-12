@@ -11,28 +11,10 @@ allOpen {
 }
 
 android {
-    compileSdkVersion 30
     defaultConfig {
         applicationId "com.senijoshua.wazzap"
-        minSdkVersion 21
-        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
-    buildFeatures {
-        dataBinding = true
-        viewBinding = false
     }
 
     buildTypes {
@@ -61,8 +43,8 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.2.5'
     // ConstraintLayout
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    // Stream Chat
-    implementation 'com.github.getstream:stream-chat-android:3.6.16'
+    // Stream Chat library module
+    implementation project(':chat')
     // Android KTX
     implementation 'androidx.core:core-ktx:1.3.1'
     // RxJava2
