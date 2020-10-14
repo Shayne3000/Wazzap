@@ -13,8 +13,6 @@ allOpen {
 android {
     defaultConfig {
         applicationId "com.senijoshua.wazzap"
-        versionCode 1
-        versionName "1.0"
     }
 
     buildTypes {
@@ -32,77 +30,76 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation Libraries.kotlinStandardLibrary
     // AppCompat
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation Libraries.appCompat
     // Android KTX
-    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation Libraries.androidKTXCore
     //Android ktx-enhanced activity
-    implementation 'androidx.activity:activity-ktx:1.1.0'
+    implementation Libraries.androidKTXActivity
     //Android ktx-enhanced fragment
-    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+    implementation Libraries.androidKTXFragment
     // ConstraintLayout
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation Libraries.constraintLayout
     // Stream Chat library module
     implementation project(':chat')
-    // Android KTX
-    implementation 'androidx.core:core-ktx:1.3.1'
     // RxJava2
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.17'
+    implementation Libraries.rxJava2
     // RxAndroid
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation Libraries.rxAndroid
     // ViewPager2
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation Libraries.viewPager2
     // Material Components Library
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation Libraries.materialComponents
     // Navigation Components
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation Libraries.navigationFrag
+    implementation Libraries.navigationUI
     // Room
-    implementation 'androidx.room:room-runtime:2.2.5'
+    implementation Libraries.room
     // Room Kotlin Extensions & Coroutines Support
-    implementation 'androidx.room:room-ktx:2.2.5'
+    implementation Libraries.roomCoroutinesSupport
     // Room RxJava Support
-    implementation 'androidx.room:room-rxjava2:2.2.5'
+    implementation Libraries.roomRxJavaSupport
     // ViewModel and LiveData
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation Libraries.viewModelAndLiveData
     // Incremental build processor for Java8
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    implementation Libraries.java8IncrementalBuildProcessor
     // LiveData ktx extension
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation Libraries.liveDataKtx
     // ViewModel ktx extension
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation Libraries.viewModelKtx
     // Dagger2
-    implementation 'com.google.dagger:dagger:2.24'
-    implementation 'com.google.dagger:dagger-android:2.24'
-    implementation 'com.google.dagger:dagger-android-support:2.24'
-    kapt 'com.google.dagger:dagger-compiler:2.24'
-    kapt 'com.google.dagger:dagger-android-processor:2.24'
+    implementation Libraries.dagger
+    implementation Libraries.daggerAndroid
+    implementation Libraries.daggerAndroidSupport
+    kapt Libraries.daggerKaptCompiler
+    kapt Libraries.daggerKaptProcessor
     // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation Libraries.retrofit
     // Moshi Converter
-    implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
+    implementation Libraries.moshiConverter
     // Moshi
-    implementation 'com.squareup.moshi:moshi:1.8.0'
+    implementation Libraries.moshi
     // Moshi CodeGen
-    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.8.0'
+    kapt Libraries.moshiCodegenKapt
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.10.0'
-    kapt 'com.github.bumptech.glide:compiler:4.10.0'
+    implementation Libraries.glide
+    kapt Libraries.glideKapt
     // Glide OkHttp Integration Library
-    implementation 'com.github.bumptech.glide:okhttp3-integration:4.10.0'
+    implementation Libraries.glideOkHttp
     //OkHttp
-    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation Libraries.okHttp
     //OkHttp Http Log interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation Libraries.okHttpLogInterceptor
+
     // JUnit4 testing framework
-    testImplementation 'junit:junit:4.12'
+    testImplementation Libraries.junit
     // Android Test Assertions
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation Libraries.testAssertions
     // Test helpers for LiveData
-    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation Libraries.liveDataTestHelpers
     // Android JUnit TestRunner
-    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation Libraries.androidJunitTestRunner
     // Espresso
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation Libraries.espresso
 }

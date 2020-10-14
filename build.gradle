@@ -1,28 +1,21 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.4.10'
-    ext {
-        googleServiceVersion = '4.3.2'
-        mavenGradlePluginVersion = '2.1'
-        jacocoVersion = '0.1.4'
-        mannodermausVersion = '1.5.1.0'
-
-    }
     repositories {
         google()
         jcenter()
-        
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'org.jetbrains.kotlin:kotlin-allopen:1.4.0'
-        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0'
+        classpath Plugins.androidGradlePlugin
+        classpath Plugins.kotlinGradlePlugin
+        classpath Plugins.kotlinAllOpenGradlePlugin
+        classpath Plugins.navigationSafeArgsGradlePlugin
 
-        classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenGradlePluginVersion"
-        classpath "com.google.gms:google-services:$googleServiceVersion"
-        classpath "de.mannodermaus.gradle.plugins:android-junit5:$mannodermausVersion"
+        classpath Plugins.androidMavenGradlePlugin
+        classpath Plugins.googleServicesPlugin
+        classpath Plugins.jacoco
+        classpath Plugins.mannodermaus
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -42,21 +35,23 @@ subprojects {
     afterEvaluate { project ->
         if (project.hasProperty('android')) {
             android {
-                compileSdkVersion 30
+                compileSdkVersion SDKConfig.compileSdk
 
                 defaultConfig {
-                    minSdkVersion 21
-                    targetSdkVersion 30
+                    minSdkVersion SDKConfig.minSdk
+                    targetSdkVersion SDKConfig.targetSdk
+                    versionCode SDKConfig.versionCode
+                    versionName SDKConfig.versionName
 
                     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
                 }
                 compileOptions {
-                    sourceCompatibility = 1.8
-                    targetCompatibility = 1.8
+                    sourceCompatibility = SDKConfig.javaVersion
+                    targetCompatibility = SDKConfig.javaVersion
                 }
 
                 kotlinOptions {
-                    jvmTarget = "1.8"
+                    jvmTarget = SDKConfig.javaVersion
                 }
 
                 buildFeatures {
