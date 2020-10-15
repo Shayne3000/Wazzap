@@ -14,7 +14,6 @@ import java.util.List;
 import io.getstream.chat.android.client.models.Message;
 import kotlin.collections.CollectionsKt;
 
-
 public class AttachmentListItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final String TAG = AttachmentListItemAdapter.class.getSimpleName();
 
@@ -28,7 +27,6 @@ public class AttachmentListItemAdapter extends RecyclerView.Adapter<RecyclerView
     private MessageListView.MessageLongClickListener longClickListener;
     private MessageListView.GiphySendListener giphySendListener;
     private MessageListView.BubbleHelper bubbleHelper;
-
 
     public AttachmentListItemAdapter(Context context,
                                      @NonNull MessageListItem.MessageItem messageListItem,

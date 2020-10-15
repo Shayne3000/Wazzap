@@ -15,7 +15,6 @@ import com.getstream.sdk.chat.utils.Constant;
 import com.getstream.sdk.chat.utils.LlcMigrationUtils;
 import com.getstream.sdk.chat.utils.StringUtility;
 
-import java.io.File;
 import java.util.List;
 
 public class AttachmentListAdapter extends BaseAdapter {
@@ -123,9 +122,12 @@ public class AttachmentListAdapter extends BaseAdapter {
             holder.iv_large_file_mark.setVisibility(fileSize > Constant.MAX_UPLOAD_FILE_SIZE ? View.VISIBLE : View.INVISIBLE);
         } else {
             holder.tv_close.setVisibility(View.VISIBLE);
-            holder.tv_close.setOnClickListener(view -> {
-                if (cancelListener != null)
-                    cancelListener.onCancel(attachment);
+            holder.tv_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (cancelListener != null)
+                        cancelListener.onCancel(attachment);
+                }
             });
         }
     }

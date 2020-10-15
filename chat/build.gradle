@@ -49,10 +49,9 @@ android {
     }
 }
 dependencies {
-/**
     api ChatLibraries.streamLivedata
 
-    implementation Libraries.kotlinStandardLibrary
+    implementation ChatLibraries.kotlinSTDLib
     implementation ChatLibraries.appCompat
     implementation ChatLibraries.constraintLayout
     implementation ChatLibraries.androidLegacySupport
@@ -109,10 +108,8 @@ dependencies {
     testImplementation ChatLibraries.mockitoKotlin
     testImplementation ChatLibraries.androidxCoreTest
     testImplementation ChatLibraries.kluent
-    testImplementation ChatLibraries.coroutinesTest **/
-
+    testImplementation ChatLibraries.coroutinesTest
 }
-
 
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs

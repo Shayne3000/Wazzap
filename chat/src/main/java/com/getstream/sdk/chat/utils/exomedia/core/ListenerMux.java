@@ -20,12 +20,20 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.view.Surface;
 
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.getstream.sdk.chat.utils.exomedia.core.exception.NativeMediaPlaybackException;
 import com.getstream.sdk.chat.utils.exomedia.core.exoplayer.ExoMediaPlayer;
 import com.getstream.sdk.chat.utils.exomedia.core.listener.ExoPlayerListener;
 import com.getstream.sdk.chat.utils.exomedia.core.listener.MetadataListener;
 import com.getstream.sdk.chat.utils.exomedia.core.video.ClearableSurface;
-import com.getstream.sdk.chat.utils.exomedia.listener.*;
+import com.getstream.sdk.chat.utils.exomedia.listener.OnBufferUpdateListener;
+import com.getstream.sdk.chat.utils.exomedia.listener.OnCompletionListener;
+import com.getstream.sdk.chat.utils.exomedia.listener.OnErrorListener;
+import com.getstream.sdk.chat.utils.exomedia.listener.OnPreparedListener;
+import com.getstream.sdk.chat.utils.exomedia.listener.OnSeekCompletionListener;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackParameters;
@@ -34,16 +42,13 @@ import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.decoder.DecoderCounters;
 import com.google.android.exoplayer2.metadata.Metadata;
-import com.google.android.exoplayer2.source.MediaSourceEventListener;
+import com.google.android.exoplayer2.source.LoadEventInfo;
+import com.google.android.exoplayer2.source.MediaLoadData;
 import com.google.android.exoplayer2.source.TrackGroupArray;
 import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
-
-import androidx.annotation.IntRange;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 /**
  * An internal Listener that implements the listeners for the {@link ExoMediaPlayer},
@@ -259,65 +264,44 @@ public class ListenerMux implements ExoPlayerListener, MediaPlayer.OnPreparedLis
     }
 
     @Override
-    public void onLoadStarted(EventTime eventTime, MediaSourceEventListener.LoadEventInfo loadEventInfo, MediaSourceEventListener.MediaLoadData mediaLoadData) {
+    public void onLoadStarted(EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
         if (analyticsListener != null) {
             analyticsListener.onLoadStarted(eventTime, loadEventInfo, mediaLoadData);
         }
     }
 
     @Override
-    public void onLoadCompleted(EventTime eventTime, MediaSourceEventListener.LoadEventInfo loadEventInfo, MediaSourceEventListener.MediaLoadData mediaLoadData) {
+    public void onLoadCompleted(EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
         if (analyticsListener != null) {
             analyticsListener.onLoadCompleted(eventTime, loadEventInfo, mediaLoadData);
         }
     }
 
     @Override
-    public void onLoadCanceled(EventTime eventTime, MediaSourceEventListener.LoadEventInfo loadEventInfo, MediaSourceEventListener.MediaLoadData mediaLoadData) {
+    public void onLoadCanceled(EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) {
         if (analyticsListener != null) {
             analyticsListener.onLoadCanceled(eventTime, loadEventInfo, mediaLoadData);
         }
     }
 
     @Override
-    public void onLoadError(EventTime eventTime, MediaSourceEventListener.LoadEventInfo loadEventInfo, MediaSourceEventListener.MediaLoadData mediaLoadData, IOException error, boolean wasCanceled) {
+    public void onLoadError(EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException error, boolean wasCanceled) {
         if (analyticsListener != null) {
             analyticsListener.onLoadError(eventTime, loadEventInfo, mediaLoadData, error, wasCanceled);
         }
     }
 
     @Override
-    public void onDownstreamFormatChanged(EventTime eventTime, MediaSourceEventListener.MediaLoadData mediaLoadData) {
+    public void onDownstreamFormatChanged(EventTime eventTime, MediaLoadData mediaLoadData) {
         if (analyticsListener != null) {
             analyticsListener.onDownstreamFormatChanged(eventTime, mediaLoadData);
         }
     }
 
     @Override
-    public void onUpstreamDiscarded(EventTime eventTime, MediaSourceEventListener.MediaLoadData mediaLoadData) {
+    public void onUpstreamDiscarded(EventTime eventTime, MediaLoadData mediaLoadData) {
         if (analyticsListener != null) {
             analyticsListener.onUpstreamDiscarded(eventTime, mediaLoadData);
-        }
-    }
-
-    @Override
-    public void onMediaPeriodCreated(EventTime eventTime) {
-        if (analyticsListener != null) {
-            analyticsListener.onMediaPeriodCreated(eventTime);
-        }
-    }
-
-    @Override
-    public void onMediaPeriodReleased(EventTime eventTime) {
-        if (analyticsListener != null) {
-            analyticsListener.onMediaPeriodReleased(eventTime);
-        }
-    }
-
-    @Override
-    public void onReadingStarted(EventTime eventTime) {
-        if (analyticsListener != null) {
-            analyticsListener.onReadingStarted(eventTime);
         }
     }
 
