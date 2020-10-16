@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.getstream.sdk.chat">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config">
+        <activity android:name=".view.activity.UsersActivity"/>
+        <activity android:name=".view.activity.AttachmentMediaActivity" />
+        <activity android:name=".view.activity.AttachmentDocumentActivity" />
+        <activity android:name=".view.activity.AttachmentActivity" />
+
+        <receiver
+            android:name=".receiver.NotificationMessageReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.getstream.sdk.chat.READ" />
+                <action android:name="com.getstream.sdk.chat.REPLY" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,3 +1,3 @@
 rootProject.name='Wazzap'
 include ':app'
-//project(":chat").projectDir=new File("C:\\Users\\shayn\\Documents\\Wazzap\\chat");
+include ':chat'
