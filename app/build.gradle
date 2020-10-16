@@ -42,7 +42,7 @@ dependencies {
     // ConstraintLayout
     implementation Libraries.constraintLayout
     // Stream Chat library module
-    implementation project(':chat')
+    //implementation project(':chat')
     // RxJava2
     implementation Libraries.rxJava2
     // RxAndroid
