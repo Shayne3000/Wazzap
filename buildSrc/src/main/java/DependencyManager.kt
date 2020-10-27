@@ -22,6 +22,7 @@ object Version {
 
     const val kotlin = "1.4.10"
     const val gradle = "4.0.2"
+    const val benManesGradleVersion = "0.33.0"
 
     const val junit = "4.12"
     const val androidx_espresso = "3.1.0"
@@ -34,6 +35,8 @@ object Plugins {
     const val kotlinAllOpenGradlePlugin = "org.jetbrains.kotlin:kotlin-allopen:${Version.kotlin}"
     const val navigationSafeArgsGradlePlugin =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Version.navigation}"
+    const val gradleVersionPlugin =
+        "com.github.ben-manes:gradle-versions-plugin:${Version.benManesGradleVersion}"
 
     // chat-module-specific plugins
     const val androidMavenGradlePlugin =
@@ -237,7 +240,7 @@ object ChatLibraries {
     const val recyclerview = "androidx.recyclerview:recyclerview:$RECYCLERVIEW_VERSION"
     const val retrofit = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
     const val roomRuntime = "androidx.room:room-runtime:$ROOM_VERSION"
-    const val roomCompiler = "androidx.room:room-compiler$ROOM_VERSION"
+    const val roomCompiler = "androidx.room:room-compiler:$ROOM_VERSION"
     const val streamLivedata =
         "com.github.getstream:stream-chat-android-livedata:$STREAM_LIVEDATA_VERSION"
 

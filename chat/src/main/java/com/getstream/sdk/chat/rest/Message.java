@@ -59,7 +59,7 @@ import static com.getstream.sdk.chat.enums.Dates.YESTERDAY;
         }
 )
 
-@SuppressWarnings(RoomWarnings.PRIMARY_KEY_FROM_EMBEDDED_IS_DROPPED)
+@SuppressWarnings({RoomWarnings.PRIMARY_KEY_FROM_EMBEDDED_IS_DROPPED, RoomWarnings.INDEX_FROM_EMBEDDED_ENTITY_IS_DROPPED})
 @JsonAdapter(MessageGsonAdapter.class)
 public class Message implements UserEntity {
 
@@ -149,6 +149,7 @@ public class Message implements UserEntity {
         this.setType("regular");
     }
 
+    @Ignore
     public Message(String text) {
         this();
         setText(text);

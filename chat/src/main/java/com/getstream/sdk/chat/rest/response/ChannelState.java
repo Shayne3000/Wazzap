@@ -1,7 +1,6 @@
 package com.getstream.sdk.chat.rest.response;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 
 @Entity(tableName = "stream_channel_state")
-@SuppressWarnings(RoomWarnings.PRIMARY_KEY_FROM_EMBEDDED_IS_DROPPED)
+@SuppressWarnings({RoomWarnings.PRIMARY_KEY_FROM_EMBEDDED_IS_DROPPED, RoomWarnings.INDEX_FROM_EMBEDDED_ENTITY_IS_DROPPED})
 public class ChannelState {
 
     private static final String TAG = ChannelState.class.getSimpleName();

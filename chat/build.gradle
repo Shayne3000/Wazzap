@@ -64,7 +64,7 @@ dependencies {
     api ChatLibraries.exoplayerHls
     api ChatLibraries.exoplayerSmoothstreaming
     implementation ChatLibraries.roomRuntime
-    annotationProcessor ChatLibraries.roomCompiler
+    kapt ChatLibraries.roomCompiler
 
     // Tests
     testImplementation ChatLibraries.junitJupiterApi
