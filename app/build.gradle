@@ -91,7 +91,6 @@ dependencies {
     implementation Libraries.okHttp
     //OkHttp Http Log interceptor
     implementation Libraries.okHttpLogInterceptor
-
     // JUnit4 testing framework
     testImplementation Libraries.junit
     // Android Test Assertions
