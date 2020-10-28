@@ -124,11 +124,13 @@ public class AttachmentListAdapter extends BaseAdapter {
             holder.iv_large_file_mark.setVisibility(file.length()> Constant.MAX_UPLOAD_FILE_SIZE ? View.VISIBLE : View.INVISIBLE);
         } else {
             holder.tv_close.setVisibility(View.VISIBLE);
-            holder.tv_close.setOnClickListener(view -> {
-                if (cancelListener != null)
-                    cancelListener.onCancel(attachment);
+            holder.tv_close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (cancelListener != null)
+                        cancelListener.onCancel(attachment);
+                }
             });
-
             if (!attachment.config.isUploaded()) {
                 holder.progressBar.setVisibility(View.VISIBLE);
                 holder.progressBar.setProgress(attachment.config.getProgress());
