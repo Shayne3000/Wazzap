@@ -68,7 +68,7 @@ class HomeFragment : WazzapFragment(R.layout.fragment_home) {
                 STATUS_INDEX -> tab.text = getString(homeTabTitles[STATUS_INDEX])
                 CALLS_INDEX -> tab.text = getString(homeTabTitles[CALLS_INDEX])
             }
-            // when a certain tab is selected, the viewpager would page to that tab
+            // when a certain tab is selected, the viewpager should page to that tab
             home_view_pager.currentItem = tab.position
         }.attach()
         home_tab_layout.selectTab(home_tab_layout.getTabAt(CHAT_INDEX))

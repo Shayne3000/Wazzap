@@ -8,7 +8,7 @@ import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 /**
- * Fragment that holds a list of the various chat conversations that are currently active
+ * Fragment that holds a list of the various chat conversations.
  *
  * @author Seni Joshua
  */
