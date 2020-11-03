@@ -14,18 +14,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:gravity="center"
-            tools:text="Super"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
+        <com.getstream.sdk.chat.view.ChannelListView
             android:id="@+id/conversation_list"
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:streamReadStateAvatarHeight="@dimen/density_16"
+            app:streamReadStateAvatarWidth="@dimen/density_16"
+            app:streamReadStateTextSize="@dimen/text_10"
+            app:streamShowReadState="true"
+            />
+
+        <ProgressBar
+            android:id="@+id/load_progress"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:isGone="@{!safeUnbox(viewModel.loading)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/load_more_progress"
+            android:layout_width="@dimen/density_24"
+            android:layout_height="@dimen/density_24"
+            android:layout_marginBottom="@dimen/density_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

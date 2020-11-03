@@ -1,6 +1,8 @@
 package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModel
+import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
+import com.senijoshua.wazzap.config.AppConfig
 import com.senijoshua.wazzap.presentation.home.HomeViewModel
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel
 import com.senijoshua.wazzap.utils.annotations.ViewModelKey
@@ -35,4 +37,9 @@ class ViewModelProviderModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     fun provideHomeViewModel(): ViewModel = HomeViewModel()
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(ChannelListViewModel::class)
+    fun provideChannelListViewModel(): ViewModel = ChannelListViewModel(AppConfig.appInstance!!)
 }
