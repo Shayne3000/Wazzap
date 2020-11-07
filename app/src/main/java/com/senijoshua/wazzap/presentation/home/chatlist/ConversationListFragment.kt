@@ -8,6 +8,7 @@ import com.getstream.sdk.chat.adapter.ChannelListItemAdapter
 import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
 import com.senijoshua.wazzap.R
 import com.senijoshua.wazzap.databinding.FragmentConversationListBinding
+import com.senijoshua.wazzap.presentation.home.HomeFragmentDirections
 import com.senijoshua.wazzap.presentation.root.WazzapFragment
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
@@ -50,6 +51,12 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
 
         binding?.conversationList?.setViewModel(channelViewModel, this, conversationListAdapter)
 
-        //navController.navigate(R.id.conversation_list_to_conversation_details)
+        viewModel.conversationList.observe(viewLifecycleOwner, {
+            channelViewModel.setChannelFilter(it)
+        })
+
+        binding?.conversationList?.setOnChannelClickListener {
+            navController.navigate(HomeFragmentDirections.homeToConversation(it.id, it.type))
+        }
     }
 }

@@ -31,6 +31,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.kotlinStandardLibrary
     implementation Libraries.appCompat
     implementation Libraries.constraintLayout
     implementation ChatLibraries.androidLegacySupport

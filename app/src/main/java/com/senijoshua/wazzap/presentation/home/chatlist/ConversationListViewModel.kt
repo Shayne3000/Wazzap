@@ -3,6 +3,9 @@ package com.senijoshua.wazzap.presentation.home.chatlist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.getstream.sdk.chat.enums.FilterObject
+import com.getstream.sdk.chat.enums.Filters
+import com.senijoshua.wazzap.config.USER_ID
 import com.senijoshua.wazzap.utils.annotations.OpenForTesting
 
 /**
@@ -13,17 +16,20 @@ import com.senijoshua.wazzap.utils.annotations.OpenForTesting
  */
 @OpenForTesting
 class ConversationListViewModel() : ViewModel() {
-    private val conversationMutableList: MutableLiveData<String> by lazy {
-        MutableLiveData<String>().also {
+    private val conversationMutableList: MutableLiveData<FilterObject?> by lazy {
+        MutableLiveData<FilterObject?>().also {
             loadConversations()
         }
     }
-    val conversationList: LiveData<String> = conversationMutableList
+    val conversationList: LiveData<FilterObject?> = conversationMutableList
 
-    val toolbarTitle: LiveData<String> = MutableLiveData<String> ("Super")
-
-    private fun loadConversations() {
-        // TODO Call the repository and ask it to load the
-        //  conversation list using the DB as a source of truth
+    /**
+     * Query all channels of type messaging
+     */
+    private fun loadConversations(): FilterObject? {
+        return Filters.and(
+            Filters.eq("type", "messaging"),
+            Filters.`in`("members", USER_ID)
+        )
     }
 }

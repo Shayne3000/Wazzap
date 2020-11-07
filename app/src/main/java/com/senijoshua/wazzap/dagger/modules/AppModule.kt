@@ -4,8 +4,11 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.getstream.sdk.chat.StreamChat
+import com.getstream.sdk.chat.rest.core.Client
 import com.senijoshua.wazzap.dagger.modules.uimodules.ActivityModule
 import com.senijoshua.wazzap.dagger.modules.uimodules.FragmentModule
+import com.senijoshua.wazzap.utils.ChatIgnition
 import com.senijoshua.wazzap.utils.annotations.ApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -23,6 +26,15 @@ class AppModule {
     @ApplicationScope
     fun provideContext(application: Application): Context {
         return application.applicationContext
+    }
+
+    @Provides
+    @ApplicationScope
+    fun provideStreamChat(application: Application): Client {
+        val configuration =
+            StreamChat.Config(application.applicationContext, ChatIgnition.getClient())
+        StreamChat.init(configuration)
+        return StreamChat.getInstance(application.applicationContext)
     }
 
     /**
