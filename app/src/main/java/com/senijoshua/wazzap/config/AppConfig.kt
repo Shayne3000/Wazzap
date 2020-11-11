@@ -38,7 +38,7 @@ class AppConfig : Application(), HasAndroidInjector {
 
     private fun initChatClientUser() {
         val additionalUserFields = HashMap<String, Any>()
-        additionalUserFields["name"] = "Mando Lorian"
+        additionalUserFields["name"] = "Paranoid Android"
         additionalUserFields["image"] = "https://bit.ly/2TIt8NR"
         chatClient.setUser(User(USER_ID, additionalUserFields), USER_TOKEN)
     }

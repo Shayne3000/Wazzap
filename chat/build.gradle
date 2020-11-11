@@ -13,7 +13,6 @@ def DEFAULT_API_TIMEOUT = 1000 * 6
 def DEFAULT_CDN_TIMEOUT = 1000 * 6
 
 android {
-
     defaultConfig {
         buildConfigField "String", "DEFAULT_API_ENDPOINT", "\"$DEFAULT_API_ENDPOINT\""
         buildConfigField "int", "DEFAULT_API_TIMEOUT", "$DEFAULT_API_TIMEOUT"
@@ -26,6 +25,11 @@ android {
             includeAndroidResources = true
             unitTests.returnDefaultValues = true
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = SDKConfig.javaVersion
+        targetCompatibility = SDKConfig.javaVersion
     }
 }
 
@@ -46,7 +50,8 @@ dependencies {
 
     implementation ChatLibraries.gson
     implementation ChatLibraries.glideRedirect
-    implementation ChatLibraries.glide
+    implementation Libraries.glide
+
     implementation ChatLibraries.drawabletoolbox
     implementation ChatLibraries.marwonCore
     implementation ChatLibraries.marwonLinkify

@@ -6,6 +6,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.getstream.sdk.chat.StreamChat;
@@ -16,10 +20,6 @@ import com.getstream.sdk.chat.utils.Utils;
 import com.getstream.sdk.chat.utils.roundedImageView.CircularImageView;
 
 import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class AvatarGroupView<STYLE extends BaseStyle> extends RelativeLayout {
 
@@ -155,11 +155,12 @@ public class AvatarGroupView<STYLE extends BaseStyle> extends RelativeLayout {
                 style.getAvatarBackGroundColor(),
                 style.avatarInitialText.color);
 
-        if (!Utils.isSVGImage(image))
+        if (!Utils.isSVGImage(image)) {
             Glide.with(context)
                     .load(StreamChat.getInstance(context).getUploadStorage().signGlideUrl(image))
                     .apply(RequestOptions.circleCropTransform())
                     .into(imageView);
+        }
 
         FontsManager fontsManager = StreamChat.getFontsManager();
         fontsManager.setFont(style.avatarInitialText, imageView, factor);

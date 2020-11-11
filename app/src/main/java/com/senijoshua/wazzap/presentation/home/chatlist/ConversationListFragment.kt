@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.getstream.sdk.chat.adapter.ChannelListItemAdapter
+import com.getstream.sdk.chat.enums.Filters
 import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
 import com.senijoshua.wazzap.R
+import com.senijoshua.wazzap.config.USER_ID
 import com.senijoshua.wazzap.databinding.FragmentConversationListBinding
 import com.senijoshua.wazzap.presentation.home.HomeFragmentDirections
 import com.senijoshua.wazzap.presentation.root.WazzapFragment
@@ -29,6 +31,11 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
         // set the android support injector to perform injection of dependencies into the fragment
         AndroidSupportInjection.inject(this)
         // holds all bindings from the layout's variables/data sources to its UI components
+
+        // Todo add an observeNonNull method to LiveDatas in the app.
+//        viewModel.conversationList.observe(this, {
+//            channelViewModel.setChannelFilter(it)
+//        })
     }
 
     override fun onCreateView(
@@ -51,9 +58,12 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
 
         binding?.conversationList?.setViewModel(channelViewModel, this, conversationListAdapter)
 
-        viewModel.conversationList.observe(viewLifecycleOwner, {
-            channelViewModel.setChannelFilter(it)
-        })
+        // query all channels of type messaging
+        val filter = Filters.and(
+            Filters.eq("type", "messaging"),
+            Filters.`in`("members", USER_ID)
+        )
+        channelViewModel.setChannelFilter(filter)
 
         binding?.conversationList?.setOnChannelClickListener {
             navController.navigate(HomeFragmentDirections.homeToConversation(it.id, it.type))

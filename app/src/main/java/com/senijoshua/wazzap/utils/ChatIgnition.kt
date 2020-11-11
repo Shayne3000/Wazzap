@@ -3,7 +3,7 @@ package com.senijoshua.wazzap.utils
 import android.app.Application
 import android.util.Base64
 
-private const val streamChat = "YldGcVpXRXlhblJtY21SNgo="
+private const val streamChat = "Y3pKa2VHUm9jSGhrT1RSbg=="
 
 /**
  * Class for initialising the chat module instance

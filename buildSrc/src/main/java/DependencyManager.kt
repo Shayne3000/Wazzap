@@ -16,7 +16,7 @@ object Version {
     const val dagger = "2.25.2"
     const val room = "2.2.5"
     const val lifecycle = "2.2.0"
-    const val glide = "4.11.0"
+    const val glide = "4.9.0"
     const val okhttp = "4.9.0"
     const val archCoreTesting = "2.1.0"
 
@@ -84,8 +84,6 @@ object Libraries {
     const val moshi = "com.squareup.moshi:moshi:${Version.moshi}"
     const val moshiCodegenKapt = "com.squareup.moshi:moshi-kotlin-codegen:${Version.moshi}"
     const val glide = "com.github.bumptech.glide:glide:${Version.glide}"
-    const val glideKapt = "com.github.bumptech.glide:compiler:${Version.glide}"
-    const val glideOkHttp = "com.github.bumptech.glide:okhttp3-integration:${Version.glide}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
     const val okHttpLogInterceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp}"
 
@@ -121,7 +119,7 @@ private const val FIREBASE_PLUGIN_VERSION = "2.2.0"
 private const val FRAGMENT_KTX_VERSION = "1.3.0-alpha07"
 private const val FRESCO_VERSION = "1.2.0"
 private const val GITVERSIONER_VERSION = "0.5.0"
-private const val GLIDE_VERSION = "4.9.0"
+private const val GLIDE_VERSION = "4.11.0"
 private const val GLIDE_REDIRECT_VERSION = "1.0.3"
 private const val GOOGLE_SERVICES_VERSION = "4.3.3"
 private const val GRADLE_VERSIONS_PLUGIN = "0.29.0"
@@ -186,8 +184,6 @@ object ChatLibraries {
     const val fresco = "com.facebook.fresco:fresco:$FRESCO_VERSION"
     const val gitversionerPlugin =
         "com.pascalwelsch.gitversioner:gitversioner:$GITVERSIONER_VERSION"
-    const val glide = "com.github.bumptech.glide:glide:$GLIDE_VERSION"
-    const val glideCompiler = "com.github.bumptech.glide:compiler:$GLIDE_VERSION"
     const val glideRedirect = "com.aminography:redirectglide:$GLIDE_REDIRECT_VERSION"
     const val googleServicesPlugin = "com.google.gms:google-services:$GOOGLE_SERVICES_VERSION"
     const val gradleVersionsPlugin =

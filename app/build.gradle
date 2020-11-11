@@ -84,9 +84,6 @@ dependencies {
     kapt Libraries.moshiCodegenKapt
     // Glide
     implementation Libraries.glide
-    kapt Libraries.glideKapt
-    // Glide OkHttp Integration Library
-    implementation Libraries.glideOkHttp
     //OkHttp
     implementation Libraries.okHttp
     //OkHttp Http Log interceptor
