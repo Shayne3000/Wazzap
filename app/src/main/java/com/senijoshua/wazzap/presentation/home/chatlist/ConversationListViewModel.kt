@@ -16,17 +16,17 @@ import com.senijoshua.wazzap.utils.annotations.OpenForTesting
  */
 @OpenForTesting
 class ConversationListViewModel() : ViewModel() {
-    private val conversationMutableList: MutableLiveData<FilterObject?> by lazy {
-        MutableLiveData<FilterObject?>().also {
+    private val conversationMutableList: MutableLiveData<FilterObject> by lazy {
+        MutableLiveData<FilterObject>().also {
             loadConversations()
         }
     }
-    val conversationList: LiveData<FilterObject?> = conversationMutableList
+    val conversationList: LiveData<FilterObject> = conversationMutableList
 
     /**
      * Query all channels of type messaging
      */
-    private fun loadConversations(): FilterObject? {
+    private fun loadConversations(): FilterObject {
         return Filters.and(
             Filters.eq("type", "messaging"),
             Filters.`in`("members", USER_ID)
