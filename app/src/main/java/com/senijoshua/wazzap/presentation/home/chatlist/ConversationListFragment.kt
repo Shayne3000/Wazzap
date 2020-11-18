@@ -55,12 +55,10 @@ class ConversationListFragment : WazzapFragment(R.layout.fragment_conversation_l
         binding?.conversationList?.setViewModel(channelViewModel, this, conversationListAdapter)
 
         // query all channels of type messaging
-        val filter = Filters.and(
+        channelViewModel.setChannelFilter(Filters.and(
             Filters.eq("type", "messaging"),
             Filters.`in`("members", USER_ID)
-        )
-
-        channelViewModel.setChannelFilter(filter)
+        ))
 
         binding?.conversationList?.setOnChannelClickListener {
             navController.navigate(HomeFragmentDirections.homeToConversation(it.id, it.type))
