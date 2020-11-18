@@ -11,6 +11,7 @@
     <string name="settings">Settings</string>
 
     <!--Conversation-->
+    <string name="video_conversation">Video Conversation</string>
     <string name="compose_message">Compose message</string>
 
     <!--Miscellaneous-->
