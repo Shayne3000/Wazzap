@@ -32,7 +32,6 @@ class HomeFragment : WazzapFragment(R.layout.fragment_home) {
     @Inject lateinit var viewModel: HomeViewModel
 
     private val homeTabTitles = listOf(R.string.chats, R.string.status, R.string.calls)
-    val rootActivity: WazzapActivity by lazy { activity as WazzapActivity }
     val pagerAdapter: HomeViewPagerAdapter by lazy {
         HomeViewPagerAdapter(childFragmentManager, lifecycle)
     }
@@ -56,7 +55,7 @@ class HomeFragment : WazzapFragment(R.layout.fragment_home) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        // sets the toolbar view as the action bar for this fragment
+        // sets the toolbar view as the action bar for this fragment in the root activity
         rootActivity.setSupportActionBar(home_toolbar)
 
         home_view_pager.adapter = pagerAdapter

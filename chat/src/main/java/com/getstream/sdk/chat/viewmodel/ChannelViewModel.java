@@ -220,7 +220,6 @@ public class ChannelViewModel extends AndroidViewModel implements LifecycleHandl
     public ChannelViewModel(Application application, Channel channel) {
         this(application);
         setChannel(channel);
-
     }
 
     public Channel getChannel() {

@@ -2,6 +2,8 @@ package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModelProvider
 import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
+import com.getstream.sdk.chat.viewmodel.ChannelViewModel
+import com.senijoshua.wazzap.presentation.chat.ConversationFragment
 import com.senijoshua.wazzap.presentation.home.HomeFragment
 import com.senijoshua.wazzap.presentation.home.HomeViewModel
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment
@@ -10,7 +12,7 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * Module that is responsible for creating ViewModels from the [ViewModelProvider] for use
+ * Module that is responsible for getting ViewModels from the [ViewModelProvider] for use
  * in fragments using the fragment instance and the [WazzapViewModelFactory].
  *
  * @author Seni Joshua
@@ -34,4 +36,10 @@ class ViewModelInjectorModule {
         target: ConversationListFragment,
         factory: ViewModelProvider.Factory
     ) = ViewModelProvider(target, factory).get(ChannelListViewModel::class.java)
+
+    @Provides
+    fun initChannelViewModel(
+        target: ConversationFragment,
+        factory: ViewModelProvider.Factory
+    ) = ViewModelProvider(target, factory).get(ChannelViewModel::class.java)
 }

@@ -2,6 +2,7 @@ package com.senijoshua.wazzap.dagger.modules.uimodules
 
 import androidx.lifecycle.ViewModel
 import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
+import com.getstream.sdk.chat.viewmodel.ChannelViewModel
 import com.senijoshua.wazzap.config.AppConfig
 import com.senijoshua.wazzap.presentation.home.HomeViewModel
 import com.senijoshua.wazzap.presentation.home.chatlist.ConversationListViewModel
@@ -12,7 +13,7 @@ import dagger.multibindings.IntoMap
 
 
 /**
- * Module responsible for instantiating and supplying [ViewModel] instances
+ * Module responsible for instantiating and provisioning [ViewModel] instances
  * for injection into any fragment.
  *
  * @author Seni Joshua
@@ -42,4 +43,9 @@ class ViewModelProviderModule {
     @IntoMap
     @ViewModelKey(ChannelListViewModel::class)
     fun provideChannelListViewModel(): ViewModel = ChannelListViewModel(AppConfig.appInstance!!)
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(ChannelViewModel::class)
+    fun provideChannelViewModel(): ViewModel = ChannelViewModel(AppConfig.appInstance!!)
 }

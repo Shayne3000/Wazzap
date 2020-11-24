@@ -12,6 +12,7 @@
 
     <!--Conversation-->
     <string name="video_conversation">Video Conversation</string>
+    <string name="audio_conversation">Audio Conversation</string>
     <string name="compose_message">Compose message</string>
 
     <!--Miscellaneous-->

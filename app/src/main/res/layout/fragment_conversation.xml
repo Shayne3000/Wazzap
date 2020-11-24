@@ -7,7 +7,7 @@
 
         <variable
             name="chatViewModel"
-            type="com.getstream.sdk.chat.viewmodel.ChannelListViewModel" />
+            type="com.getstream.sdk.chat.viewmodel.ChannelViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

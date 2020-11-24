@@ -19,6 +19,8 @@ class WazzapFragment(@LayoutRes layoutId: Int) : Fragment(layoutId) {
     // it would have been done for them within this parent class.
     lateinit var navController: NavController
 
+    val rootActivity: WazzapActivity by lazy { activity as WazzapActivity }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
