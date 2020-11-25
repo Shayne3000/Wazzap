@@ -18,12 +18,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_conversation_list"
-        android:name="com.senijoshua.wazzap.presentation.home.chatlist.ConversationListFragment"
-        android:label="ConversationList"
-        tools:layout="@layout/fragment_conversation_list" />
-
-    <fragment
         android:id="@+id/fragment_conversation"
         android:name="com.senijoshua.wazzap.presentation.chat.ConversationFragment"
         android:label="Conversation"

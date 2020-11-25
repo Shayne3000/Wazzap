@@ -30,11 +30,7 @@ private const val CALLS_INDEX = 2
  */
 class HomeFragment : WazzapFragment(R.layout.fragment_home) {
     @Inject lateinit var viewModel: HomeViewModel
-
     private val homeTabTitles = listOf(R.string.chats, R.string.status, R.string.calls)
-    val pagerAdapter: HomeViewPagerAdapter by lazy {
-        HomeViewPagerAdapter(childFragmentManager, lifecycle)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,17 +44,13 @@ class HomeFragment : WazzapFragment(R.layout.fragment_home) {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         // sets the toolbar view as the action bar for this fragment in the root activity
         rootActivity.setSupportActionBar(home_toolbar)
 
-        home_view_pager.adapter = pagerAdapter
+        home_view_pager.adapter = HomeViewPagerAdapter(childFragmentManager, lifecycle)
 
         // initialise the tablayout and attach the view pager to it
         TabLayoutMediator(home_tab_layout, home_view_pager) { tab, position ->

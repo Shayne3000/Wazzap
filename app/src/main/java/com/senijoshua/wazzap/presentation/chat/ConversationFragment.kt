@@ -7,18 +7,18 @@ import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.navArgs
 import com.getstream.sdk.chat.rest.core.Client
-import com.getstream.sdk.chat.viewmodel.ChannelListViewModel
 import com.getstream.sdk.chat.viewmodel.ChannelViewModel
 import com.senijoshua.wazzap.R
 import com.senijoshua.wazzap.databinding.FragmentConversationBinding
 import com.senijoshua.wazzap.presentation.root.WazzapFragment
 import dagger.android.support.AndroidSupportInjection
+import kotlinx.android.synthetic.main.fragment_conversation.*
 import javax.inject.Inject
 
 class ConversationFragment : WazzapFragment(R.layout.fragment_conversation) {
 
-    @Inject private lateinit var client: Client
-    @Inject private lateinit var channelViewModel: ChannelViewModel
+    @Inject lateinit var client: Client
+    @Inject lateinit var channelViewModel: ChannelViewModel
     private val fragmentArgs: ConversationFragmentArgs by navArgs()
     private lateinit var layoutDataBinding: FragmentConversationBinding
 
@@ -50,7 +50,7 @@ class ConversationFragment : WazzapFragment(R.layout.fragment_conversation) {
         super.onActivityCreated(savedInstanceState)
 
         // Instead of using kotlin android extensions for synthetic binding,
-        // we use databinding to access the layout elements.
+        // we use data binding to access the layout elements.
         rootActivity.setSupportActionBar(layoutDataBinding.conversationToolbar)
 
         // Whenever this fragment destination is swapped in to the navhost, we basically
@@ -61,7 +61,6 @@ class ConversationFragment : WazzapFragment(R.layout.fragment_conversation) {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setDisplayShowTitleEnabled(false)
         }
 
         layoutDataBinding.lifecycleOwner = this
@@ -74,6 +73,13 @@ class ConversationFragment : WazzapFragment(R.layout.fragment_conversation) {
 
         layoutDataBinding.conversationThreadList.setViewModel(channelViewModel, this)
         layoutDataBinding.conversationInput.setViewModel(channelViewModel, this)
+
+        layoutDataBinding.conversationAvatar.setChannelAndLastActiveUsers(
+            channel,
+            channel.channelState.otherUsers,
+            conversation_thread_list.style
+        )
+
         layoutDataBinding.conversationRecipient.text = channel.name
     }
 }

@@ -23,8 +23,8 @@ private const val USER_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2l
  */
 class AppConfig : Application(), HasAndroidInjector {
 
-    @Inject private lateinit var androidInjector: DispatchingAndroidInjector<Any>
-    @Inject private lateinit var chatClient: Client
+    @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+    @Inject lateinit var chatClient: Client
 
     override fun onCreate() {
         super.onCreate()

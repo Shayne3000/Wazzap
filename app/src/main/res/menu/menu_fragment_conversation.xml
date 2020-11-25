@@ -5,14 +5,12 @@
     <item android:id="@+id/conversation_video_call"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_videocam_24dp"
-        android:iconTint="@color/white"
         android:title="@string/video_conversation"
         />
 
     <item android:id="@+id/conversation_audio_call"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_phone_24dp"
-        android:iconTint="@color/white"
         android:title="@string/audio_conversation"
         />
 
