@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="density_2">2dp</dimen>
     <dimen name="density_4">4dp</dimen>
     <dimen name="density_8">8dp</dimen>
+    <dimen name="density_12">12dp</dimen>
     <dimen name="density_16">16dp</dimen>
     <dimen name="density_24">24dp</dimen>
     <dimen name="density_32">32dp</dimen>
@@ -9,6 +11,7 @@
     <dimen name="density_48">48dp</dimen>
     <dimen name="density_56">56dp</dimen>
     <dimen name="density_64">64dp</dimen>
+    <dimen name="density_100">100dp</dimen>
 
     <!--text sizes-->
     <dimen name="text_10">10sp</dimen>

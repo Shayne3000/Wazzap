@@ -14,6 +14,7 @@
     <string name="video_conversation">Video Conversation</string>
     <string name="audio_conversation">Audio Conversation</string>
     <string name="compose_message">Compose message</string>
+    <string name="send_message">Send message</string>
 
     <!--Miscellaneous-->
     <string name="search">Search</string>
