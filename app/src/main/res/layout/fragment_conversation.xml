@@ -81,7 +81,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent" />
 
-        <com.getstream.sdk.chat.view.MessageInputView
+        <com.senijoshua.wazzap.utils.ConversationInputView
             android:id="@+id/conversation_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

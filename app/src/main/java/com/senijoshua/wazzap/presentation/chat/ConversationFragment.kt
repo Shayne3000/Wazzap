@@ -72,7 +72,7 @@ class ConversationFragment : WazzapFragment(R.layout.fragment_conversation) {
         layoutDataBinding.chatViewModel = channelViewModel
 
         layoutDataBinding.conversationThreadList.setViewModel(channelViewModel, this)
-        layoutDataBinding.conversationInput.setViewModel(channelViewModel, this)
+        layoutDataBinding.conversationInput.addViewModel(channelViewModel, this)
 
         layoutDataBinding.conversationAvatar.setChannelAndLastActiveUsers(
             channel,
