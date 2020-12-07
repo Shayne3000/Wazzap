@@ -15,6 +15,9 @@
     <string name="audio_conversation">Audio Conversation</string>
     <string name="compose_message">Compose message</string>
     <string name="send_message">Send message</string>
+    <string name="add_emoji">Add emoji</string>
+    <string name="attach_files">Attach files</string>
+    <string name="add_photos">Add photos</string>
     <string name="message_edit_hint">Type a message</string>
 
     <!--Miscellaneous-->
