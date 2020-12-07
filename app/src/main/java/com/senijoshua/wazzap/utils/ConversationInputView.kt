@@ -33,6 +33,7 @@ class ConversationInputView : ConstraintLayout {
     }
 
     private fun init(context: Context) {
+        // Here we inflate the view_conversation_input that we want to use in this custom view
         conversationInputView =
             ViewConversationInputBinding.inflate(LayoutInflater.from(context), this, true)
     }
