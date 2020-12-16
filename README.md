@@ -2,7 +2,7 @@
 Wazzap is a WhatsApp clone built using [Jetpack Components](https://developer.android.com/jetpack), the [Stream Chat API](https://getstream.io/), and other modern Android Development techniques. Wazzap was inspired by the WhatsApp clone created by the [GetStream Team](https://getstream.io/blog/build-whatsapp-clone/).
 
 ## Building Blocks
-Wazzap was written in Kotlin and Java. It uses a Single-Activity model in tandem with a Modular structural paradigm architectural pattern, along with a bevy of tools, paradigms, plugins and libraries from the Jetpack suite and the Android ecosystem at large. These are listed below:
+Wazzap was written in Kotlin and Java. It uses a Single-Activity architectural pattern in tandem with a Modular structural paradigm, and a bevy of tools, paradigms, plugins and libraries from the Jetpack suite; and the Android ecosystem at large. These are listed below:
 
 ### Libraries
 - [Jetpack][0]:
