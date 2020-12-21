@@ -1,8 +1,8 @@
 # Wazzap
-Wazzap is a WhatsApp clone built using [Jetpack Components](https://developer.android.com/jetpack), the [Stream Chat API](https://getstream.io/), and other modern Android Development techniques. Wazzap was inspired by the WhatsApp clone created by the [GetStream Team](https://getstream.io/blog/build-whatsapp-clone/).
+Wazzap is a WhatsApp clone built using [Jetpack Components](https://developer.android.com/jetpack), the [Stream Chat API](https://getstream.io/), and other modern Android Development techniques. Wazzap was inspired by the [WhatsApp clone](https://getstream.io/blog/build-whatsapp-clone/) created by the GetStream Team.
 
 ## Building Blocks
-Wazzap was written in Kotlin and Java. It uses a Single-Activity architectural pattern in tandem with a modular structural paradigm. It also employs a bevy of tools, paradigms, plugins, and libraries from the Jetpack suite; and the Android ecosystem at large. These are listed below:
+Wazzap was written in Kotlin and Java. It uses a single-activity architecture in tandem with a modular structural paradigm. It also employs a bevy of other tools, plugins, and libraries from the Jetpack suite; and the Android ecosystem at large. These are listed below:
 
 ### Libraries
 - [Jetpack][0]:
@@ -12,10 +12,10 @@ Wazzap was written in Kotlin and Java. It uses a Single-Activity architectural p
        
     - [Architecture][16]- a collection of libraries that help design robust, testable, and maintainable apps.
        - [DataBinding][17] - declaratively bind data sources to UI components in a layout. 
-       - [Navigation][18] - handles everything to do with in-app navigation.
+       - [Navigation][18] - handles everything to do with navigation within the single activity.
        - [Lifecycle][19] - attaches lifecycle-aware capabilities to architecture components.
        - [LiveData][20] - a lifecycle-aware, observable data holding component.
-       - [ViewModel][21] - stores and manages UI-related data in a lifecycle-conscious manner.
+       - [ViewModel][21] - stores and manages UI-related data in a lifecycle-conscious manner. It also retains its data through configuration changes like screen rotations.
       
     - UI - User-interface components from Jetpack used for building 
        - [AndroidX Kotlin Fragment][11] - a Kotlin implementation of a Fragment from the AndroidX Fragment Library.
@@ -32,7 +32,7 @@ Several other 3rd party plugins and dependencies are used in this project, some 
 -   [Ktlint][8] - an anti-bikeshedding Kotlin linter with built-in formatter.
 -   [Versions][9] - a plugin that indicates the dependencies in one's gradle configuration file that have version updates.
 -   [SafeArgs][10] - generates simple object and builder classes for type-safe navigation and provides access to any related arguments.
-- [amongst others...][13]
+- [and others...][13]
 
 
 [0]: https://developer.android.com/jetpack
@@ -56,6 +56,7 @@ Several other 3rd party plugins and dependencies are used in this project, some 
 [18]: https://developer.android.com/guide/navigation
 [19]: https://developer.android.com/topic/libraries/architecture/lifecycle
 [20]: https://developer.android.com/topic/libraries/architecture/livedata
+[21]: https://developer.android.com/topic/libraries/architecture/viewmodel
 
 ## License 
 
