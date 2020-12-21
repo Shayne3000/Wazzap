@@ -2,24 +2,24 @@
 Wazzap is a WhatsApp clone built using [Jetpack Components](https://developer.android.com/jetpack), the [Stream Chat API](https://getstream.io/), and other modern Android Development techniques. Wazzap was inspired by the [WhatsApp clone](https://getstream.io/blog/build-whatsapp-clone/) created by the GetStream Team.
 
 ## Building Blocks
-Wazzap was written in Kotlin and Java. It uses a single-activity architecture in tandem with a modular structural paradigm. It also employs a bevy of other tools, plugins, and libraries from the Jetpack suite; and the Android ecosystem at large. These are listed below:
+Wazzap was written in Kotlin and Java. It uses a single-activity architecture in tandem with a modular app structural paradigm. It also employs a bevy of other tools, plugins, and libraries from the Jetpack suite; and the Android ecosystem at large. These are listed below:
 
 ### Libraries
 - [Jetpack][0]:
-    - Foundation - Components for core system capabilities, Kotlin extensions and support for multidex and automated testing.
+    - Foundation - Components for core system capabilities, Kotlin extensions and support for multidex.
        - [Android KTX][2] - provide concise, idiomatic Kotlin to Jetpack and Android platform APIs.
        - [AndroidX][1] - an improvement on the [Android Support Library][5].
        
-    - [Architecture][16]- a collection of libraries that help design robust, testable, and maintainable apps.
+    - [Architecture][16] - a collection of libraries for designing robust, testable, and maintainable apps.
        - [DataBinding][17] - declaratively bind data sources to UI components in a layout. 
        - [Navigation][18] - handles everything to do with navigation within the single activity.
        - [Lifecycle][19] - attaches lifecycle-aware capabilities to architecture components.
        - [LiveData][20] - a lifecycle-aware, observable data holding component.
        - [ViewModel][21] - stores and manages UI-related data in a lifecycle-conscious manner. It also retains its data through configuration changes like screen rotations.
       
-    - UI - User-interface components from Jetpack used for building 
+    - UI - User-interface components and controls from Jetpack used for building the GUI of an app.
        - [AndroidX Kotlin Fragment][11] - a Kotlin implementation of a Fragment from the AndroidX Fragment Library.
-       - [AndroidX Kotlin Activity][12] - a Kotlin implementation of an Activity from the AndroidX Acivity Library.
+       - [AndroidX Kotlin Activity][12] - a Kotlin implementation of an Activity from the AndroidX Activity Library.
        - [AppCompat][14]- Provides backward compatibility across older Android releases i.e. allows access to new APIs on older API versions of the platform (many using Material Design).
        - [Material Design Components][15] - Modular and customizable Material Design UI components for Android.
    
@@ -30,8 +30,8 @@ Wazzap was written in Kotlin and Java. It uses a single-activity architecture in
 ### Plugins
 Several other 3rd party plugins and dependencies are used in this project, some of which are:
 -   [Ktlint][8] - an anti-bikeshedding Kotlin linter with built-in formatter.
--   [Versions][9] - a plugin that indicates the dependencies in one's gradle configuration file that have version updates.
--   [SafeArgs][10] - generates simple object and builder classes for type-safe navigation and provides access to any related arguments.
+-   [Versions][9] - a plugin that indicates which dependencies in one's gradle configuration file have version updates.
+-   [SafeArgs][10] - generates simple object and builder classes for type-safe navigation and provides access to any component arguments.
 - [and others...][13]
 
 
